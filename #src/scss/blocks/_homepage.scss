@@ -1,0 +1,120 @@
+.homepage {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    &__content {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 580px;
+        margin: 40px 20px;
+        @media (max-width: $md3+px){
+           width: 100%;
+        }
+    }
+    
+    &__move{
+        width: 100vw;
+        height: 100vh;
+        background: $white;
+        transform: translateX(-100%);
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: all 10s ease-in-out;
+        z-index: 10;
+        &.active{
+            transform: translateX(0%);
+            transition: all 1s ease-in-out;
+        }
+    }
+
+    &__img {
+        @media (max-width: $md3+px){
+           width: 250px;
+        }
+        @media (max-width: $md4+px){
+            width: 200px;
+        }
+        img{
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+    }
+
+    &__search {
+        position: relative;
+        margin: 20px 0px 0px 0px;
+        width: 100%;
+        @media (max-width: $md4+px){
+            margin: 10px 0px 0px 0px;
+        }
+    }
+
+    &__input {
+        width: 100%;
+        border: 1px solid #ccc;
+        outline: none;
+        font-size: 16px;
+        border-radius: 30px;
+        padding: 13px 60px 13px 45px;
+        transition: all .3s ease-in-out;
+        &:focus{
+            box-shadow: 1px 1px 4px #ccc;
+        }
+        @media (max-width: $md3+px){
+            padding: 13px 50px 13px 45px;
+        }
+    }
+
+    &__icons {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 20px;
+        pointer-events: none;
+    }
+
+    &__icon{
+        max-width: 100%;
+    }
+
+    &__buttons {
+        margin: 20px 0px 0px 0px;
+    }
+
+    &__button {
+        margin: 0 5px;
+        padding: 12px 20px;
+        background: #f8f9fa;
+        color: #555;
+        font-size: 14px;
+        border: none;
+        border-radius: 4px;
+        border: 1px solid transparent;
+        transition: all .3s ease-in-out;
+        outline: none;
+        @media (min-width: 992px){
+            &:hover{
+                border: 1px solid #ccc;
+            }
+        }
+        @media (max-width: $md4+px){
+            padding: 10px 14px;
+            margin: 0 4px;
+        }
+    }
+
+    &__searchBtn {
+
+    }
+}

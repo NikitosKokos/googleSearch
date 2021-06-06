@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+	@@include('_head.html',{
+	"title":"Google Search"
+	})
+	<body>
+		<div class="wrapper">
+			@@include('_header.html',{})
+			<main class="page">
+				<div class="homepage">
+					<div class="homepage__move"></div>
+					<div class='homepage__content'>
+						<div class="homepage__img">
+							<img src="./img/logo/google.png" alt="Google">
+						</div>
+						<div class="homepage__search">
+							<input type="text" name="" class="homepage__input" >
+							<div class="homepage__icons">
+								<div class="homepage__icon"><img src="./img/icons/search.png" alt="search"></div>
+								<div class="homepage__icon"><img src="./img/icons/mic.png" alt="mic"></div>
+							</div>
+						</div>
+						<div class="homepage__buttons">
+							<button class="homepage__button homepage__searchBtn">Google Search</button>
+							<a href="https://www.google.com/doodles" class="homepage__button">I'm felling Lucky</a>
+						</div>
+					</div>
+				</div>
+			</main>
+			@@include('_footer.html',{})
+		</div>
+		@@include('_popup.html',{})
+		@@include('_js.html',{})
+	</body>
+</html>
