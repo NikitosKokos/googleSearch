@@ -5,6 +5,15 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    overflow: hidden;
+    background: $white;
+    transition: all .3s ease-in-out;
+    $grey: #ccc;
+    $btnColor: #f8f9fa;
+    // dark theme colors
+    $dark-grey: #bbb;
+    $dark-btnColor: #eee;
+
     &__content {
         height: 100%;
         display: flex;
@@ -26,15 +35,15 @@
         position: absolute;
         top: 0;
         left: 0;
-        transition: all 10s ease-in-out;
         z-index: 10;
+        transition: transform .1s ease-in-out;
         &.active{
             transform: translateX(0%);
-            transition: all 1s ease-in-out;
+            transition: transform 1s ease-in-out;
         }
     }
 
-    &__img {
+    &__logo {
         @media (max-width: $md3+px){
            width: 250px;
         }
@@ -59,14 +68,14 @@
 
     &__input {
         width: 100%;
-        border: 1px solid #ccc;
+        border: 1px solid $grey;
         outline: none;
         font-size: 16px;
         border-radius: 30px;
         padding: 13px 60px 13px 45px;
         transition: all .3s ease-in-out;
         &:focus{
-            box-shadow: 1px 1px 4px #ccc;
+            box-shadow: 1px 1px 4px $grey;
         }
         @media (max-width: $md3+px){
             padding: 13px 50px 13px 45px;
@@ -95,7 +104,7 @@
     &__button {
         margin: 0 5px;
         padding: 12px 20px;
-        background: #f8f9fa;
+        background: $btnColor;
         color: #555;
         font-size: 14px;
         border: none;
@@ -105,7 +114,7 @@
         outline: none;
         @media (min-width: 992px){
             &:hover{
-                border: 1px solid #ccc;
+                border: 1px solid $grey;
             }
         }
         @media (max-width: $md4+px){
@@ -116,5 +125,45 @@
 
     &__searchBtn {
 
+    }
+
+    $self: &;
+    &.dark{
+        background: #111;
+        #{$self}__move{
+            background: #111;
+        }
+        #{$self}__input{
+            border-color: $dark-grey;
+            &:focus{
+                box-shadow: 1px 1px 4px $dark-grey;
+            }
+        }
+        #{$self}__button{
+            background: $dark-btnColor;
+            @media (min-width: 992px){
+                &:hover{
+                    border: 1px solid $dark-grey;
+                }
+            }
+        }
+
+    }
+    &.animateTheme{
+        animation: changeTheme 3s ease-in-out;
+        @keyframes changeTheme {
+            0%{
+                transform: scale(1);
+            }
+            30%{
+                transform: scale(0.4);
+            }
+            60%{
+                transform: scale(0.4);
+            }
+            100%{
+                transform: scale(1);
+            }
+        }
     }
 }
